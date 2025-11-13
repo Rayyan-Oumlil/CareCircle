@@ -1,0 +1,51 @@
+# Données sensibles - NE PAS PUSHER
+data/
+
+# Fichiers de données
+*.csv
+*.xlsx
+*.xls
+
+# Documents confidentiels
+*.pdf
+*.docx
+*.doc
+
+# Fichiers temporaires
+*.tmp
+*.temp
+*~
+.DS_Store
+Thumbs.db
+
+# Environnements Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# Notebooks avec sorties
+.ipynb_checkpoints
+*.ipynb
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Fichiers système
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
