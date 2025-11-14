@@ -29,8 +29,12 @@ MILA-Hackathon/
 │   ├── Hackathon_RSN_Pitch_Template (1).pdf  # Template officiel (Tess)
 │   └── README.md             # Guide de la présentation
 ├── analyse_rayyan/           # Analyses CANPATH (Rayyan)
-│   ├── analyse_depression_canpath.ipynb  # Modèle régression logistique - Facteurs risque dépression
-│   └── Taches_Rayyan.md     # Liste des tâches et projets à implémenter
+│   ├── Model_Isolation_Sociale_CANPATH.ipynb      # Modèle 1: Prédiction isolement social
+│   ├── Model_Troubles_Sommeil_CANPATH.ipynb      # Modèle 2: Troubles sommeil (indicateur stress)
+│   ├── Model_Depression_CANPATH.ipynb            # Modèle 3: Prédiction dépression majeure
+│   ├── Model_Isolement_Aines_CANPATH.ipynb        # Modèle 4: Isolement et santé chez aînés (65+)
+│   ├── Model_Environnement_Isolement_CANPATH.ipynb # Modèle 5: Interaction environnement-isolement-dépression
+│   └── visualisations_*/     # Visualisations générées par chaque modèle
 ├── Chapitre_16 - Santé mentale et troubles mentaux.xlsx  # Données adolescents (Julie-Anne)
 ├── .gitignore                # Exclut les données sensibles (data/)
 └── README.md
@@ -63,6 +67,15 @@ MILA-Hackathon/
   - Comportements : `SLE_*` (sommeil), `ALC_*` (alcool), `SMK_*` (tabac), `NUT_*` (nutrition), `PA_*` (activité physique)
   - Environnement (CANUE) : pollution (PM2.5, NO2, SO2, O3), température, indice de défavorisation
 - **Utilité** : Analyses populationnelles, associations santé-environnement, facteurs de risque
+
+**Modèles développés** (5 modèles de régression logistique) :
+1. **Isolement social** : Prédiction à partir des caractéristiques démographiques et structure du ménage
+2. **Troubles du sommeil** : Indicateur précoce de stress et isolement social
+3. **Dépression majeure** : Prédiction à partir des facteurs sociaux, lifestyle et santé
+4. **Isolement chez les aînés** : Analyse de l'impact de l'isolement sur la santé mentale et physique (65+)
+5. **Interaction environnement-isolement-dépression** : Modèle avec termes d'interaction entre expositions environnementales et isolement social
+
+Chaque modèle inclut : preprocessing (imputation, encodage, normalisation), métriques d'évaluation complètes (accuracy, precision, recall, F1-score, AUC-ROC), et visualisations (top 10 facteurs, matrices de confusion, courbes ROC).
 
 #### MDClone (CUSM)
 
@@ -283,4 +296,5 @@ Les agents intermédiaires (Red Flag, Coaching, Clinical Interview, De-escalatio
 
 - **Structure du pitch** : `presentation/Structure_Pitch.md`
 - **Détails d'entraînement des modèles** : `documentation/10_Entrainement_Modeles_Agents.md` (à créer)
-- **Tâches Rayyan** : `analyse_rayyan/Taches_Rayyan.md`
+- **Tâches Rayyan** : `analyse_rayyan/Taches_Rayyan.md` (archivé)
+- **Modèles CANPATH** : 5 notebooks de régression logistique dans `analyse_rayyan/`
