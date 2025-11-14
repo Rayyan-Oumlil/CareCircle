@@ -132,27 +132,49 @@ Un système d'agents IA spécialisés qui agit comme un **"collègue expert virt
 
 ---
 
+## 📱 Dashboard & Interface Utilisateur
+
+### Design Principles
+- **Simplicité** : Interface intuitive, facile à comprendre et à manier
+- **Clarté** : Informations présentées de manière claire et structurée
+- **Rapidité** : Réponses rapides, pas de surcharge cognitive
+- **Transparence** : Voir comment les agents collaborent et arrivent au consensus
+
+### Layout Principal
+1. **Zone Input** : Champ de texte pour décrire la situation
+2. **Zone Agents en Action** : Visualisation temps réel des agents qui analysent
+3. **Zone Réponse Consolidée** : Résultat final avec consensus entre agents
+
+### Fonctionnalités Clés
+- **Feedback temps réel** : Voir chaque agent analyser en parallèle
+- **Visualisation collaboration** : Diagramme montrant les échanges entre agents
+- **Transparence** : "Pourquoi cette réponse ?" → Voir le raisonnement
+- **Contexte régional** : Dashboard avec statistiques de la région (Stat Agent)
+
+**Voir détails complets** : `13_Dashboard_Design_UI.md`
+
+---
+
 ## 🏗️ Architecture Technique (Sans Données Confidentielles)
 
 ### Stack Technologique Suggéré
 
 1. **Framework d'agents** :
-   - LangChain (orchestration d'agents, communication inter-agents)
-   - AutoGen (multi-agent conversations, consensus building)
-   - CrewAI (collaboration entre agents, workflow structuré)
+   - **CrewAI** (confirmé) : Collaboration entre agents, workflow structuré
    - **Inspiration** : Architecture de l'article WSI-Agents (système multi-agents collaboratif)
+   - **Innovation clé** : Agents qui interagissent entre eux pour proposer une réponse fact-checked, logique et en consensus
 
 2. **LLM** :
-   - GPT-4 ou Claude (pour le traitement de langage)
-   - Modèles open-source (Llama, Mistral) pour la confidentialité
+   - **Groq API** (confirmé) : Très rapide, free tier disponible
+   - Alternative : Ollama avec Qwen 3B (local, offline)
 
 3. **Base de connaissances** :
-   - Vector database (Pinecone, Weaviate, ou Chroma)
+   - **Chroma** (confirmé) : Vector database locale, gratuite, facile à setup
    - Stocke des guidelines publiques, protocoles, ressources
 
 4. **Interface** :
-   - Web app (React/Next.js)
-   - Mobile app (React Native)
+   - **React** (confirmé) : Web app avec dashboard interactif
+   - Design system : Tailwind CSS + Shadcn/ui ou Material-UI
    - Intégration avec systèmes existants (API)
 
 ### Architecture Multi-Agents Collaboratifs (Inspirée de l'article WSI-Agents)
@@ -396,23 +418,16 @@ Intervenant → Interface → Agent Orchestrateur
 
 ### Analyses concrètes à faire (48h hackathon)
 
-1. **CANPATH** :
-   - Calculer % de troubles du sommeil/anxiété par région (code postal)
-   - Association défavorisation ↔ santé mentale
-   - Créer profils régionaux pour le Stat Agent
+1. **CANPATH** (Rayyan) :
+   - Modèles spécialisés avec régression (voir 5 projets dans doc Juan)
+   - Prédire dépression majeure à partir de facteurs sociaux/lifestyle
+   - Association isolement social + environnement → dépression
+   - Créer modèles prédictifs pour montrer ce que l'intervenant verrait
+   - Visualisations pour le pitch
 
-2. **MDClone** :
-   - Identifier pics de visites aux urgences liées à santé mentale
-   - Association vagues de chaleur ↔ crises de santé mentale
-   - Trajectoires de soins (urgences → suivi)
-
-3. **POYM** :
-   - Identifier comorbidités psychiatriques fréquentes
-   - Facteurs de risque de réadmission liés à santé mentale
-
-4. **Intégration pour les agents** :
-   - **Stat Agent** : Utiliser CANPATH pour statistiques régionales
-   - **Red Flag Agent** : Utiliser patterns MDClone/POYM pour identifier risques
+2. **Intégration pour les agents** :
+   - **Stat Agent** : Utiliser CANPATH pour statistiques régionales et modèles prédictifs
+   - **Red Flag Agent** : Utiliser modèles CANPATH pour identifier risques
    - **Global Impact Agent** : Analyser associations environnement ↔ santé mentale
 
 ---

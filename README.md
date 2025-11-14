@@ -19,7 +19,17 @@ MILA-Hackathon/
 │   ├── 07_Presentation_POYM.md                # Présentation POYM (CHUS)
 │   ├── 08_Article_MDClone_Validation.md       # Article validation données synthétiques
 │   ├── 09_Idees_Projet_Agent_IA.md            # Idées concrètes pour le projet
+│   ├── 13_Dashboard_Design_UI.md              # Design et interface utilisateur
+│   ├── 15_Limites_Etudes_References.md        # Limites des études de référence
+│   ├── 16_Resume_Analyses_PL.md              # Résumé analyses PL (variables sélectionnées)
 │   └── Article_WSI_Agents_MultiAgent_System.pdf  # Article multi-agents (inspiration)
+├── presentation/             # Présentation finale du hackathon
+│   ├── Structure_Pitch.md    # Structure détaillée du pitch (5-6 slides)
+│   ├── Validation_Utilisateurs.md  # Guide validation avec professionnels
+│   ├── Hackathon_RSN_Pitch_Template (1).pdf  # Template officiel (Tess)
+│   └── README.md             # Guide de la présentation
+├── Chapitre_16 - Santé mentale et troubles mentaux.xlsx  # Données adolescents (Julie-Anne)
+├── analyse_depression_canpath.ipynb  # Modèle de régression logistique - Facteurs de risque dépression (CANPATH)
 ├── .gitignore                # Exclut les données sensibles (data/)
 └── README.md
 ```
@@ -76,7 +86,9 @@ MILA-Hackathon/
 ## 💡 Projet : Agent IA Multi-Expert pour Intervenants de Première Ligne en Santé Mentale
 
 ### Concept principal
-Développer un système d'agents IA spécialisés pour outiller les intervenants de première ligne (infirmières scolaires, travailleurs sociaux, intervenants communautaires) dans la détection précoce, l'évaluation et l'orientation des personnes en détresse psychologique.
+Développer un système d'agents IA spécialisés (assistant de ressources) pour outiller les intervenants de première ligne (infirmières scolaires, travailleurs sociaux, intervenants communautaires) travaillant avec les **jeunes du secondaire** dans la détection précoce, l'évaluation et l'orientation des personnes en détresse psychologique.
+
+**Niveau d'intervention** : Services de prévention et d'intervention précoce en milieu scolaire (niveau 2)
 
 ### Problématique
 - **Manque d'accès aux ressources** : Les intervenants de première ligne manquent de ressources spécialisées et accessibles
@@ -85,14 +97,25 @@ Développer un système d'agents IA spécialisés pour outiller les intervenants
 - **Besoin d'expertise multidisciplinaire** : Les intervenants doivent faire des décisions informées sans avoir accès à tous les experts
 
 ### Solution proposée
-Un système d'agents IA spécialisés (Model Zoo) qui agissent comme des experts virtuels :
+Un système d'agents IA spécialisés qui agissent comme un **assistant de ressources** pour les intervenants de première ligne travaillant avec les jeunes du secondaire (niveau 2 : prévention et intervention précoce en milieu scolaire).
 
-1. **Red Flag Expert** : Détection de signaux d'alarme
-2. **Coaching Expert** : Accompagnement et soutien
-3. **Clinical Interview Expert** : Aide à l'entretien clinique
-4. **De-escalation Expert** : Gestion de crises
-5. **Stat Agent** : Statistiques régionales et contextuelles
-6. **Global Impact Agent** : Analyse d'impact intersectoriel (ex: logement → coûts hospitaliers)
+#### Agents spécialisés
+
+1. **Red Flag Agent** : Aide déterminer si l'intervenant devrait faire recours à une autorité de santé supérieure (pas de diagnostic légal, mais identification de troubles plus sérieux)
+
+2. **Coaching Agent** : Aide l'intervenant à traiter le patient (ex: anxiété → guider avec avis, respecter pyramide de Maslow, nutrition, relations, exercice). En pratique, c'est traiter le problème mental.
+
+3. **Clinical Interview Agent** : Aide l'intervenant qui ne sait PAS quoi demander au patient. Entrée : "Le patient a les symptômes A et B, qu'est-ce que je peux lui demander maintenant pour améliorer mon analyse ?" (Outil HANDY)
+
+4. **De-escalation Agent** : Gère les crises (ex: attaques de panique)
+
+5. **Stat Agent** : Fournit statistiques régionales rapides au besoin
+
+6. **Coach Culturel Agent** : Accompagne l'intervenant pour intervenir de manière adéquate auprès de populations marginalisées/racisées (sécurisation culturelle des soins de santé) - suggère manières d'aborder, termes à utiliser/éviter
+
+#### Outil (pas agent)
+
+7. **Global Impact Agent** : Outil qui sauvegarde chaque interaction intervenant/modèle pour voir quels problèmes/questions arrivent le plus souvent selon la région. Sondage automatique pour santé publique, permet de prendre action au niveau politique et déployer ressources. Les intervenants n'ont pas à remplir de sondages.
 
 ### Objectifs
 - Outiller les intervenants de première ligne avec une expertise multidisciplinaire accessible
@@ -114,6 +137,7 @@ Toute la documentation du hackathon est organisée dans le dossier `documentatio
 - **`07_Presentation_POYM.md`** : Présentation complète sur le challenge POYM (CHUS)
 - **`08_Article_MDClone_Validation.md`** : Résumé de l'article scientifique sur la validation des données synthétiques
 - **`09_Idees_Projet_Agent_IA.md`** : Idées concrètes pour le projet Agent IA (basé sur le plan de Juan)
+- **`13_Dashboard_Design_UI.md`** : Design et interface utilisateur du dashboard
 - **`Article_WSI_Agents_MultiAgent_System.pdf`** : Article sur systèmes multi-agents collaboratifs (inspiration architecture)
 
 ## 🔗 Ressources utiles
@@ -125,6 +149,20 @@ Toute la documentation du hackathon est organisée dans le dossier `documentatio
 
 ### Notes de l'équipe
 - [Document de planification - Juan Felipe](https://docs.google.com/document/d/11K8uFI3NGsCDsLZmZa4qReuWgrEAxXWRbmFGeVaA_Mk/edit)
+
+### Ressources pour justifier la pertinence (Julie-Anne)
+
+**Articles sur besoins des intervenants** :
+- [The Mental Health Training Intervention for School Nurses](https://pmc.ncbi.nlm.nih.gov/articles/PMC7036278/)
+- [School Nurses' Experiences in Dealing with Adolescents Having Mental Health Problems](https://pmc.ncbi.nlm.nih.gov/articles/PMC9449503/)
+- [Review on school nurses' training needs for mental health](https://escholarship.org/content/qt1r79h16s/qt1r79h16s.pdf)
+- [Rôles des infirmières scolaires - Minnesota](https://www.health.state.mn.us/people/childrenyouth/schoolhealth/hco/mentalhlth.html)
+
+**Note sur MH-TIPS** : Cette méthode existe mais favorise la formation continue. Notre solution (CareCircle) n'existe pas encore et offre une alternative complémentaire avec agents IA spécialisés.
+
+**Données adolescents** :
+- [Enquête québécoise sur la santé des jeunes du secondaire 2022-2023](https://statistique.quebec.ca/fr/document/sante-jeunes-secondaire-2022-2023)
+- [Méthodologie](https://statistique.quebec.ca/fr/fichier/enquete-quebecoise-sante-jeunes-secondaire-2022-2023-methodologie.pdf)
 
 ## 🚀 Développement
 
@@ -143,16 +181,29 @@ Toute la documentation du hackathon est organisée dans le dossier `documentatio
 - **Infirmier** : Soins infirmiers
 
 #### Sources de données pour l'entraînement
-- Rapports de psychologues et ergothérapeutes
-- Questionnaires complets d'évaluation
-- Bases de données spécialisées par domaine/région
-- Données CANPATH pour contextes régionaux
 
-### Technologies suggérées
-- Framework d'agents IA (ex: LangChain, AutoGen, CrewAI)
-- LLM pour le traitement du langage naturel
-- Base de données pour stocker les connaissances
-- API pour l'intégration avec les systèmes existants
+**Bases de données identifiées (Juan)** :
+
+🧠 **Counseling & Dialogue Datasets** :
+- MentalChat16K, HuggingFace Mental Health Counseling Datasets, PsyDial, CounseLLMe, MedDialog, NutriBench
+
+🧪 **Synthetic & Augmented Data** :
+- GPT-generated therapist–patient dialogs, Synthetic Q&A and clinical vignettes, Synthetic ADL coaching scenarios, Public therapist Q&A, Psychoeducation guides rewritten as Q&A/dialog, Recovery support dialogs
+
+📖 **Manuals & Professional Guides** :
+- CBT guides/worksheets, DBT training materials, ERP manuals, Psychiatric emergency guidelines, Psychiatric treatment guidelines (APA), Nutrition counseling and psychoeducation, Government/NGO resource guides
+
+📚 **Expert-Curated & Case-Based Sources** :
+- Case studies (psychology, psychiatry, OT), Online psychiatrist Q&A (ChatPsychiatrist-style), Therapist/clinician session transcripts, Dietitian FAQs and session transcripts, Community health worker case studies, Real psychotherapy and emotional support transcripts
+
+**Note** : Ces bases de données sont pour montrer COMMENT on entraînerait les modèles, pas pour un MVP fonctionnel.
+
+### Technologies confirmées
+- **Framework d'agents** : CrewAI (collaboration multi-agents, consensus)
+- **LLM** : Groq API (rapide, free tier) ou Ollama (local)
+- **Vector DB** : Chroma (local, gratuit)
+- **Frontend** : React + Tailwind CSS
+- **Innovation** : Agents qui interagissent entre eux pour réponse fact-checked et consensus
 
 ### Architecture Multi-Agents Collaboratifs (Inspirée de l'article WSI-Agents)
 - **Agent Orchestrateur** : Coordonne et route les requêtes vers les agents spécialisés
@@ -162,20 +213,18 @@ Toute la documentation du hackathon est organisée dans le dossier `documentatio
 
 ### Utilisation des Données Disponibles
 
-#### CANPATH - Pour le Stat Agent
+#### CANPATH - Modèles spécialisés (Rayyan)
 - **Variables santé mentale** : Sommeil (`SLE_*`), alcool (`ALC_*`), activité physique (`PA_*`), état de santé (`HS_*`)
 - **Environnement** : Défavorisation (`MSD_*`), pollution (`PM25DAL_01`, `NO2LUR_02`), température
-- **Utilisation** : Statistiques régionales, profils contextuels, associations santé-environnement
+- **Utilisation** : Modèles de régression pour prédire dépression, isolement social, etc.
+- **Approche** : Voir 5 projets dans doc Juan (dernières pages) - modèles prédictifs avec CANPATH
+- **Note** : CANPATH = données adultes, mais modèles adaptables aux adolescents. Pertinence justifiée avec données adolescents (Enquête santé jeunes secondaire 2022-2023)
 
-#### MDClone - Pour identifier des patterns
-- **Visites aux urgences** (`ed_visit.csv`) : Patterns de crises de santé mentale
-- **Vagues de chaleur** (`HW.csv`) : Association avec visites aux urgences
-- **Pollution** (`Poll.csv`) : Impact sur santé mentale
-- **Utilisation** : Trajectoires de soins, facteurs déclencheurs, patterns temporels
-
-#### POYM - Pour facteurs de risque
-- **Diagnostics** (`adm_*`, `dischargedx_*`) : Comorbidités psychiatriques
-- **Utilisation** : Identification de patients à haut risque, facteurs de réadmission
+#### Données Adolescents (Julie-Anne)
+- **Source** : Enquête québécoise sur la santé des jeunes du secondaire 2022-2023
+- **Fichier** : `Chapitre_16 - Santé mentale et troubles mentaux.xlsx`
+- **Utilisation** : Justifier la pertinence du projet (statistiques adolescents)
+- **Méthodologie** : https://statistique.quebec.ca/fr/fichier/enquete-quebecoise-sante-jeunes-secondaire-2022-2023-methodologie.pdf
 
 ### Prochaines étapes
 1. Structurer le pitch (3 minutes)
